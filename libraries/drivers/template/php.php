@@ -30,7 +30,7 @@ class PhpTemplate
         $this->_data = array_merge($__data, $this->_data);
 
         ob_start();
-        
+
         include($this->_dir.$__view.'.php');
 
         $content = ob_get_contents();
