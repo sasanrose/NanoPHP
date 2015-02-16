@@ -1,0 +1,16 @@
+{
+  "name": "sasanrose/nanophp",
+  "homepage": "https://github.com/sasanrose/nanophp",
+  "description": "NanoPHP Framework",
+  "authors": [
+    {
+      "name": "Sasan Rose",
+      "email": "sasan.rose@gmail.com",
+      "homepage": "http://pioneermind.ir",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "files": ["libraries/autoload.php"]
+  }
+}
