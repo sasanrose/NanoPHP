@@ -1,7 +1,7 @@
 <?php
-class Controller
+class controller
 {
-    private $_objects = Null;
+    private $_objects = null;
 
     public function __construct()
     {
@@ -15,6 +15,6 @@ class Controller
 
     public function __get($object)
     {
-        return isset($this->_objects[$object]) ? $this->_objects[$object] : Null;
+        return isset($this->_objects[$object]) ? $this->_objects[$object] : null;
     }
 }

@@ -7,26 +7,30 @@ class FileLog
     {
         $config_dir = App::instance()->config['log']['file']['directory'];
 
-        if (!$config_dir)
+        if (!$config_dir) {
             die('Please provide a log directory in your config file');
-        else {
+        } else {
             $this->_dir = __dir__.'/../../../'.$config_dir.'/'.PHP_SAPI.'/';
 
-            if (!is_writable($this->_dir))
-                if (!mkdir($this->_dir, 0755, True))
+            if (!is_writable($this->_dir)) {
+                if (!mkdir($this->_dir, 0755, true)) {
                     die("{$this->_dir} does not exist or is not writable");
+                }
+            }
         }
     }
 
-    public function write($type, $msg, $namespace = Null)
+    public function write($type, $msg, $namespace = null)
     {
-        if (App::instance()->config['log']['threshold'] < Log::instance()->$type)
+        if (App::instance()->config['log']['threshold'] < Log::instance()->$type) {
             return;
+        }
 
         $logfile = $this->_dir.date('Y-m-d').'.log';
 
-        if (($file = fopen($logfile, 'a+')) === False)
+        if (($file = fopen($logfile, 'a+')) === false) {
             die('Can not open file: '.$logfile);
+        }
 
         $ip        = isset($_SERVER['REMOTE_ADDR']) ? "[{$_SERVER['REMOTE_ADDR']}]" : '';
         $namespace = isset($namespace) ? '['.ucwords(strtolower($namespace)).']' : '';

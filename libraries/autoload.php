@@ -12,8 +12,9 @@ function __autoload($class)
     } elseif (preg_match('/^(.*)_Helpers$/', $class, $matches)) {
         $class = $matches[2];
         $dir   = 'helpers';
-    } else
+    } else {
         $dir = 'libraries';
+    }
 
     include_once($path.$dir.'/'.(strtolower($class)).'.php');
 }

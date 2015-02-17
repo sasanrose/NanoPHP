@@ -1,32 +1,32 @@
 <?php
-$config = Array(
+$config = array(
     'default_controller' => 'Welcome',
     'default_action'     => 'Index',
-    'production'         => True,
+    'production'         => true,
     'default_layout'     => 'layout',
     'timezone'           => 'Asia/Tehran',
-    'log' => Array(
+    'log' => array(
         'driver'    => 'file',
         'threshold' => 3, /* 0: Disable Logging 1: Error 2: Notice 3: Info 4: Warning 5: Debug */
-        'file'      => Array(
+        'file'      => array(
             'directory' => 'logs'
         )
     ),
-    'database'  => Array(
+    'database'  => array(
         'driver' => 'redis',
-        'mysql'  => Array(
+        'mysql'  => array(
             'host'     => 'localhost',
             'username' => 'root',
             'password' => 'root'
         ),
-        'redis' => Array(
+        'redis' => array(
             'host'     => 'localhost',
             'port'     => '6379',
-            'password' => Null,
+            'password' => null,
             'database' => 0
         )
     ),
-    'session' => Array(
+    'session' => array(
         'lifetime'       => 7200,
         'gc_probability' => 2,
         'name'           => 'nanophpsession'

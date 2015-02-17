@@ -1,12 +1,12 @@
 <?php
 class PhpTemplate
 {
-    protected $_dir     = Null;
-    protected $_data    = Array();
-    protected $_headers = Array();
+    protected $_dir     = null;
+    protected $_data    = array();
+    protected $_headers = array();
 
-    public $app    = Null;
-    public $router = Null;
+    public $app    = null;
+    public $router = null;
 
     public function __construct()
     {
@@ -18,14 +18,14 @@ class PhpTemplate
         $this->router = Router::instance();
     }
 
-    public function render($__view, $data = Array())
+    public function render($__view, $data = array())
     {
         $content = $this->renderPartial($__view, $data);
 
         echo $this->renderPartial(App::instance()->config['default_layout'], array('content' => $content));
     }
 
-    public function renderPartial($__view, $__data = Array())
+    public function renderPartial($__view, $__data = array())
     {
         $this->_data = array_merge($__data, $this->_data);
 
@@ -42,8 +42,9 @@ class PhpTemplate
 
     public function addHeader($header)
     {
-        if (!in_array($header, $this->_headers))
+        if (!in_array($header, $this->_headers)) {
             $this->_headers[] = $header;
+        }
     }
 
     public function getHeaders()
@@ -58,7 +59,7 @@ class PhpTemplate
 
     public function __get($key)
     {
-        return isset($this->_data[$key]) ? $this->_data[$key] : Null;
+        return isset($this->_data[$key]) ? $this->_data[$key] : null;
     }
 
     public function __isset($key)
