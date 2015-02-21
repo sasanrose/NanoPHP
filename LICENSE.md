@@ -1,4 +1,4 @@
-BSD License
+NanoPHP is free software. It is released under the terms of the following BSD License.
 
 Copyright © 2013, Sasan Rose
 
