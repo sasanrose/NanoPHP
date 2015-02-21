@@ -2,6 +2,7 @@
   "name": "sasanrose/nanophp",
   "homepage": "https://github.com/sasanrose/nanophp",
   "description": "NanoPHP Framework",
+  "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Sasan Rose",
