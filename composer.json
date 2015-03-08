@@ -10,7 +10,12 @@
       "role": "Developer"
     }
   ],
+  "require": {
+    "php": ">=5.3.0"
+  },
   "autoload": {
-    "files": ["libraries/autoload.php"]
+    "psr-4": {
+      "nanophp\\": "library/"
+    }
   }
 }
