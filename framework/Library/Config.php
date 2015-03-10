@@ -17,7 +17,7 @@ class Config
      *
      * @var object
      */
-    protected static $_instance = Null;
+    protected static $_instance = null;
 
     /**
      * _config
@@ -63,7 +63,7 @@ class Config
      *
      * @return mixed $config Return requested configuration
      */
-    public function get($key, $defaultValue = False)
+    public function get($key, $defaultValue = false)
     {
         // Explode the key using slash
         $key     = trim($key, '/');
@@ -72,8 +72,9 @@ class Config
         $config  = $this->_config;
 
         // If indices are empty then return the whole config
-        if (empty($indices))
+        if (empty($indices)) {
             return $config;
+        }
 
         // Walk through indices
         foreach ($indices as $index) {
