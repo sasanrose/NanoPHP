@@ -1,9 +1,9 @@
 <?php
 
-namespace nanophp\Library;
+namespace nanophp\Libraries;
 
-use nanophp\Library\Config;
-use nanophp\Library\Router;
+use nanophp\Libraries\Config;
+use nanophp\Libraries\Router;
 
 /**
  * Class: Application

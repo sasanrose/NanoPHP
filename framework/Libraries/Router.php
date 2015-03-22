@@ -1,6 +1,6 @@
 <?php
 
-namespace nanophp\Library;
+namespace nanophp\Libraries;
 
 /**
  * Class: Router
@@ -15,28 +15,28 @@ class Router
      *
      * @var array
      */
-    protected $_data = Array();
+    protected $_data = array();
 
     /**
      * _instance
      *
      * @var object
      */
-    protected static $_instance = Null;
+    protected static $_instance = null;
 
     /**
      * _params
      *
      * @var array
      */
-    protected $_params = Array();
+    protected $_params = array();
 
     /**
      * _query_strings
      *
      * @var array
      */
-    protected $_query_strings = Array();
+    protected $_query_strings = array();
 
     /**
      * Singleton
@@ -59,7 +59,7 @@ class Router
      *
      * @param string $request Request to be parsed
      */
-    protected function _parse($request = Null)
+    protected function _parse($request = null)
     {
         // First check if there is a custom request sent to the parser
         if (isset($request)) {
@@ -125,7 +125,7 @@ class Router
      *
      * @param string $request
      */
-    public function route($request = Null)
+    public function route($request = null)
     {
         $this->_parse($request);
 
