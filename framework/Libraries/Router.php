@@ -127,6 +127,7 @@ class Router
      */
     public function route($request = null)
     {
+        // Parse request data
         $this->_parse($request);
 
         // Create Clas name space
@@ -134,17 +135,23 @@ class Router
         // Create action method
         $method = "{$this->action}Action";
 
+        // Create Logging info
+        $logInfo = ['params' => $this->_params, 'queris' => $this->_query_strings, 'SAPI' => PHP_SAPI];
+
         // Check if class and its method do exist and then call them using
         // params
         if (class_exists($class)) {
             $controller = new $class;
             if (method_exists($controller, $method)) {
                 call_user_func_array(array($controller, $method), $this->_params);
+
+                \nanophp\Libraries\Application::logger()->info("{$this->controller}/{$this->action}", $logInfo);
                 return;
             }
         }
 
         header("HTTP/1.0 404 Not Found");
+        \nanophp\Libraries\Application::logger()->error("{$this->controller}/{$this->action}", $logInfo);
         //TODO: Implement 404 template
     }
 

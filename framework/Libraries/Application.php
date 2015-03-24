@@ -5,6 +5,8 @@ namespace nanophp\Libraries;
 use nanophp\Libraries\Config;
 use nanophp\Libraries\Router;
 
+use Monolog\Logger;
+
 /**
  * Class: Application
  *
@@ -13,6 +15,13 @@ use nanophp\Libraries\Router;
  */
 class Application
 {
+    /**
+     * _logger
+     *
+     * @var object
+     */
+    protected static $_logger = null;
+
     /**
      * __construct
      *
@@ -35,5 +44,20 @@ class Application
 
         // Do the actual job and route
         Router::instance()->route();
+    }
+
+    /**
+     * logger
+     *
+     * Get instance of logger
+     */
+    public static function logger()
+    {
+        if (!isset(self::$_logger)) {
+            self::$_logger = new Logger('NanoPHP');
+            self::$_logger->pushHandler(\nanophp\Libraries\Config::instance()->get('log_handler'));
+        }
+
+        return self::$_logger;
     }
 }
