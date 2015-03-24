@@ -13,7 +13,7 @@
   "license": "BSD-3-Clause",
   "require": {
     "php": ">=5.4.0",
-    "katzgrau/klogger": "1.0.*"
+    "monolog/monolog": "1.*"
   },
   "require-dev": {
     "phpdocumentor/phpdocumentor": "2.*"
