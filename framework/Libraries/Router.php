@@ -112,11 +112,11 @@ class Router
 
         // Extract requested controller/command and action
         if (!$this->controller = ucwords(strtolower(array_shift($this->_params)))) {
-            $this->controller = ucwords(strtolower(Config::instance()->get('default_controller')));
+            $this->controller = ucwords(strtolower(Config::instance()->get('default/controller')));
         }
 
         if (!$this->action = array_shift($this->_params)) {
-            $this->action = Config::instance()->get('default_action');
+            $this->action = Config::instance()->get('default/action');
         }
     }
 

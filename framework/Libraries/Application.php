@@ -37,6 +37,15 @@ class Application
      */
     public function run()
     {
+        // Check if log directory exists and is writable
+        $logDir = \nanophp\Libraries\Config::instance()->get('log/dir');
+
+        if (!is_dir($logDir)) {
+            die("{$logDir} is not a directory");
+        } elseif (!is_writable($logDir)) {
+            die("{$logDir} is not writable");
+        }
+
         // Set default timezone if it is set in config file
         if ($timezone = Config::instance()->get('/timezone')) {
             date_default_timezone_set($timezone);
@@ -55,7 +64,7 @@ class Application
     {
         if (!isset(self::$_logger)) {
             self::$_logger = new Logger('NanoPHP');
-            self::$_logger->pushHandler(\nanophp\Libraries\Config::instance()->get('log_handler'));
+            self::$_logger->pushHandler(\nanophp\Libraries\Config::instance()->get('log/handler'));
         }
 
         return self::$_logger;
