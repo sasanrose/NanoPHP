@@ -46,6 +46,9 @@ class Application
             die("{$logDir} is not writable");
         }
 
+        // Set Error Handler
+        (new \nanophp\Libraries\Error)->init();
+
         // Set default timezone if it is set in config file
         if ($timezone = Config::instance()->get('/timezone')) {
             date_default_timezone_set($timezone);
