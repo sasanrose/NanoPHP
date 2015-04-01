@@ -11,7 +11,18 @@
       "role": "Developer"
     }
   ],
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": ">=5.4.0",
+    "monolog/monolog": "1.*"
+  },
+  "require-dev": {
+    "phpdocumentor/phpdocumentor": "2.*"
+  },
   "autoload": {
-    "files": ["libraries/autoload.php"]
+    "psr-4": {
+      "nanophp\\": "framework/",
+      "nanophp\\Template\\": "framework/Drivers/Template/"
+    }
   }
 }

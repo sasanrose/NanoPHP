@@ -1,6 +1,6 @@
 NanoPHP is free software. It is released under the terms of the following BSD License.
 
-Copyright © 2013, Sasan Rose
+Copyright © 2015, Sasan Rose
 
 All rights reserved.
 
