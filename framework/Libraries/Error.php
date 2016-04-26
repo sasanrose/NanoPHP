@@ -36,7 +36,7 @@ final class Error
         set_error_handler([$this, 'errorHandler']);
 
         // Set a custom exception handler
-        set_exception_handler([$this, 'exceptionHanler']);
+        set_exception_handler([$this, 'exceptionHandler']);
 
         // Set a custom shutdown handler
         register_shutdown_function([$this, 'shutdownHandler']);
@@ -69,7 +69,7 @@ final class Error
      *
      * @param Exception $e
      */
-    public function exceptionHanler(Exception $e)
+    public function exceptionHandler(Exception $e)
     {
         // Log exception
         \nanophp\Libraries\Application::logger()->log(Logger::ERROR, "{$e->getMessage()} on {$e->getFile()}:{$e->getLine()}");
